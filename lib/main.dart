@@ -19,17 +19,18 @@ void main() {
 final GoRouter _router = GoRouter(
   routes: <RouteBase>[
     GoRoute(
-      path: '/',
-      builder: (BuildContext context, GoRouterState state) {
-        return const HomePage();
-      },
-    ),
-    GoRoute(
-      path: '/meter',
-      builder: (BuildContext context, GoRouterState state) {
-        return const MeterPage();
-      },
-    ),
+        path: '/',
+        builder: (BuildContext context, GoRouterState state) {
+          return const HomePage();
+        },
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'meter',
+            builder: (BuildContext context, GoRouterState state) {
+              return const MeterPage();
+            },
+          ),
+        ]),
   ],
 );
 
